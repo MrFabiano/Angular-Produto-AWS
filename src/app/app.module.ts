@@ -8,11 +8,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    
   ],
   imports: [
     BrowserModule,
