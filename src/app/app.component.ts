@@ -74,8 +74,6 @@ export class AppComponent {
          next: (res) => {
           this.buscarProdutos();
           alert("Produto removido com sucesso");
-          // this.produtoForm.reset();
-         
          },
          error: (error) => {
           console.log(error);
