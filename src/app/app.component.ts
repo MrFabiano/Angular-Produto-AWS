@@ -39,7 +39,7 @@ export class AppComponent {
 
    criarProduto(): Produto {
     return {
-      id: this.produtoForm.get('id')?.value!,
+      _id: this.produtoForm.get('_id')?.value!,
       nome: this.produtoForm.get('nome')?.value!,
       valor: this.produtoForm.get('valor')?.value!,
       descricao: this.produtoForm.get('descricao')?.value!,
@@ -67,10 +67,10 @@ export class AppComponent {
    }
 
    remover(produto: Produto){
-    const confirmacao = confirm("Quer realmente excluir este produto" + produto.nome);
+    const confirmacao = confirm("Quer realmente excluir este produto" + produto._id);
     if(confirmacao){
       //const id = produto.id;
-      this.produtoService.remover(produto.id).subscribe({
+      this.produtoService.remover(produto._id).subscribe({
          next: (res) => {
           this.buscarProdutos();
           alert("Produto removido com sucesso");
