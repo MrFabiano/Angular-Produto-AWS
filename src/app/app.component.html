@@ -6,18 +6,18 @@
          <div class="card-title"><h4>Produtos</h4></div>
            <form [formGroup]="produtoForm" (ngSubmit)="salvar()">
             <div class="form-group">
-             <label for="nome">Nome</label>
-             <input type="text" placeholder="Nome" class="form-control" id="nome" formControlName="nome">
+             <label for="name">Nome</label>
+             <input type="text" placeholder="Nome" class="form-control" id="name" formControlName="name">
             </div>
             <br />
             <div class="form-group">
-                <label for="valor">Preço</label>
-                <input type="number" placeholder="Preço" class="form-control" id="valor" formControlName="valor">
+                <label for="price">Preço</label>
+                <input type="number" placeholder="Preço" class="form-control" id="price" formControlName="price">
                </div>
                <br />
                <div class="form-group">
-                <label for="descricao">Descrição</label>
-                <textarea name="" id="descricao" formControlName="descricao" rows="3" class="form-control"></textarea>
+                <label for="description">Descrição</label>
+                <textarea name="" id="description" formControlName="description" rows="3" class="form-control"></textarea>
                </div>
                <br />
                <button class="btn btn-primary" [disabled]="produtoForm.invalid">Salvar</button>
@@ -38,9 +38,9 @@
             <th>Ação</th>
           </thead>
           <tr *ngFor="let produto of produtos">
-            <td>{{ produto.nome }}</td>
-            <td>{{ produto.valor }}</td>
-            <td>{{ produto.descricao }}</td>
+            <td>{{ produto.name }}</td>
+            <td>{{ produto.price }}</td>
+            <td>{{ produto.description }}</td>
             <td style="width: 100px;">
             <div>
             <button (click)="remover(produto)" class="btn btn-danger btn-sm" type="button">Remover</button>

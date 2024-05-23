@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Produto } from "../model/produto";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment";
 
 
 
@@ -26,7 +26,7 @@ export class ProdutoService{
         return this.http.post<Produto>(this._URL, produto);
     }
 
-    remover(_id: number){
-        return this.http.delete(`${this._URL}/${_id}`);
+    remover(id: number){
+        return this.http.delete(`${this._URL}/${id}`);
     }
 } 
