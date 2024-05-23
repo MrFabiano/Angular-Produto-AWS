@@ -1,4 +1,4 @@
-export const environment = {
-    production: false,
-    url: 'http://APIproduto-env.eba-xqp5i3fv.us-east-1.elasticbeanstalk.com/api/'
-};
+//export const environment = {
+    //production: false,
+   // url: 'http://test-apiproduto-env.eba-ugbfb8fr.us-east-2.elasticbeanstalk.com/api/'
+//};

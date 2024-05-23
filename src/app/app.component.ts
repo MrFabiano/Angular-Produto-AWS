@@ -21,9 +21,9 @@ export class AppComponent {
 
    produtoForm = this.fb.group({
     id:[],
-    nome: [null, Validators.required],
-    valor: [null, Validators.required],
-    descricao: []
+    name: [null, Validators.required],
+    price: [null, Validators.required],
+    description: []
    })
 
    buscarProdutos(){
@@ -39,10 +39,10 @@ export class AppComponent {
 
    criarProduto(): Produto {
     return {
-      _id: this.produtoForm.get('_id')?.value!,
-      nome: this.produtoForm.get('nome')?.value!,
-      valor: this.produtoForm.get('valor')?.value!,
-      descricao: this.produtoForm.get('descricao')?.value!,
+      id: this.produtoForm.get('id')?.value!,
+      name: this.produtoForm.get('name')?.value!,
+      price: this.produtoForm.get('price')?.value!,
+      description: this.produtoForm.get('description')?.value!,
     }
 
    }
@@ -67,14 +67,14 @@ export class AppComponent {
    }
 
    remover(produto: Produto){
-    const confirmacao = confirm("Quer realmente excluir este produto" + produto._id);
+    const confirmacao = confirm("Quer realmente excluir este produto" + produto.id);
     if(confirmacao){
-      //const id = produto.id;
-      this.produtoService.remover(produto._id).subscribe({
+      const id = produto.id;
+      this.produtoService.remover(produto.id).subscribe({
          next: (res) => {
           this.buscarProdutos();
           alert("Produto removido com sucesso");
-          // this.produtoForm.reset();
+          this.produtoForm.reset();
          
          },
          error: (error) => {
