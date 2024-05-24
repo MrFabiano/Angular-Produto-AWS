@@ -1,7 +1,7 @@
 version: 0.2
 env:
    variables:
-     APP_NAME: "front-produto-aws"
+     APP_NAME: "aws-front-produto"
 phases:
   install:
     runtime-versions:
